@@ -1,5 +1,5 @@
-# testrepo
+# Proyecto de Física Atómica y Molecular
 
-# Editing this file
+# Este repositorio es para subir todos los documentos que se vayan haciendo sobre el proyecto de física atómica y molecular
 
-Its a markdown file in this repository
+Derechos reservados
