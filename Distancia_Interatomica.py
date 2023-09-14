@@ -1,6 +1,6 @@
 # DISTANCIA INTERATOMICA APARTIR DE FRECUENCIA DE ABSORCION
 
-N_A = 6.022e23 # Numero de Avogrado
+N_A = 6.022e23 # Numero de Avogadro
 import math
 
 #MASAS DE LOS ELEMENTONS EN G/MOL
