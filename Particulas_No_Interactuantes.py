@@ -1,54 +1,55 @@
-#PARTICIULAS NO INTERACTUANTES EN UNA CAJA UNIDIMENSIONAL
+""" Este programa es para hallar los niveles energéticos de un sistema con 
+N partículas no interactuantes """
+N, L= 0, 0.0
+H = 6.626070e-34
+HBAR = 1.0545771e-34
+#Sección inicial
+print("---------------------------------------")
+print("--- PARTICULAS NO INTERACTUANTES EN ---\n--- UNA CAJA UNIDIMENSIONAL---")
+print("---------------------------------------")
+N = int(input("--> Ingrese el número de partículas no interactuantes: "))
+print("---------------------------------------")
+L =  float(input("--> Ingrese la longitud de la caja undimensional en m: "))
 
-h = 6.626070e-34
-hbar = 1.0545771e-34
-
-def iniciar():
-  print("---------------------------------------")
-  print("--- PARTICULAS NO INTERACTUANTES EN ---\n--- UNA CAJA UNIDIMENSIONAL---")
-  print("---------------------------------------")
-  N = int(input("--> Ingrese el número de partículas no interactuantes: "))
-  print("---------------------------------------")
-  L =  float(input("--> Ingrese la longitud de la caja undimensional en m: "))
-  print("---------------------------------------")
-  return L, N
+print("---------------------------------------")
+#Sección para obtener las masas
+masas = []
+for i in range(0, N):
+    mi = float(input(f"--> Ingrese la masa de la particula {i+1} en kg: "))
+    masas.append(mi)
+print("---> Masas = ", masas)
+print("---------------------------------------")
 
 
-def Obtener_Masas(N):
-  m = []
-  for i in range(0, N):
-    mi = float(input("--> Ingrese la masa de la particula %i en kg: "%(i+1)))
-    m.append(mi)
-  print("---> Masas = ", m)
-  print("---------------------------------------")
-  return m
+def obtener_niveles(A):
+    """Función que obtiene los valores de n para cada
+    una de las N partículas"""
+    n = list(int(num) for num in input("--> Ingrese Niveles a Obtener separados por espacios: ").strip().split())[:A]
+    print("--->Niveles = ", n)
+    print("---------------------------------------")
+    return n
 
-def Obtener_Niveles(N):
-  n = list(int(num) for num in input("--> Ingrese Niveles a Obtener separados por espacios: ").strip().split())[:N]
-  print("--->Niveles = ", n)
-  print("---------------------------------------")
-  return n
 
-def E(n, C, m):
-  Enn = []
-  for i in range(0, len(n)):
-    E = C * ((n[i]**2)/(m[i]))
-    Enn.append(E)
-  En = sum(Enn)
-  En_eV = En * 6.242e18
-  print("--> Energía = {:.3e} Joules, {:.2e} eV".format(En, En_eV))
-  print("---------------------------------------")
-  return En, En_eV
+def energia(n, C, m):
+    """Función que calcula la energía de cada una de las N partículas
+    para el valor correspondiente de n, y las suma"""
+    enn = []
+    for j in range(0, len(n)):
+        E = C * ((n[j]**2)/(m[j]))
+        enn.append(E)
+    en = sum(enn)
+    energia_elecvolt = en * 6.242e18
+    print("--> Energía = {:.3e} Joules, {:.2e} eV".format(en, energia_elecvolt))
+    print("---------------------------------------")
+    return en, energia_elecvolt
 
-L, N = iniciar()
-m = Obtener_Masas(N)
 
-C = h**2 / (8 * L**2)
+Cons = H**2 / (8 * L**2)
 i = 0
 
-iter = int(input("--> ¿Cuantas iteraciones desea hacer? "))
+iteraciones = int(input("--> ¿Cuantas iteraciones desea hacer? "))
 
-for i in range(0,iter):
-  n = Obtener_Niveles(N)
-  E(n, C, m)
-  i = i +1
+for i in range(0,iteraciones):
+    nivel = obtener_niveles(N)
+    energia(nivel, Cons, masas)
+    i = i +1
