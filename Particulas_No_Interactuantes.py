@@ -53,3 +53,43 @@ for i in range(0,iteraciones):
     nivel = obtener_niveles(N)
     energia(nivel, Cons, masas)
     i = i +1
+
+"""def encontrar_configuraciones_menor_energia(m1, m2, m3, rango_n, num_configuraciones):
+    configuraciones = []
+
+    # Probar todas las posibles configuraciones de energía para cada n de cada partícula
+    for n1 in rango_n:
+        for n2 in rango_n:
+            for n3 in rango_n:
+                # Calcular la energía total para esta configuración
+                E1 = (n1 ** 2) / m1
+                E2 = (n2 ** 2) / m2
+                E3 = (n3 ** 2) / m3
+                energia_total = E1 + E2 + E3
+
+                # Almacenar la configuración y su energía total
+                configuracion = (n1, n2, n3)
+                
+                # Comprobar que una configuración no tenga una energía duplicada
+                if not any(energia_total in nested_list for nested_list in configuraciones):
+                    configuraciones.append((configuracion, energia_total))
+
+    # Ordenar las configuraciones por energía total
+    configuraciones.sort(key=lambda x: x[1])
+
+    # Seleccionar las primeras N configuraciones
+    mejores_configuraciones = configuraciones[:num_configuraciones]
+
+    return mejores_configuraciones
+
+# Valores iniciales (m = masa | n = num. cuant. princ. | 
+#  rango = valores que puede tomar n | num_configuraciones = primeros n niveles de energía)
+m1 = 9
+m2 = 5
+m3 = 5
+n1 = n2 = n3 = 1
+rango_n = range(1, 6)  # Por ejemplo, valores de n de 1 a 5
+num_configuraciones = 5  # Obtener las primeras 3 configuraciones de menor energía
+
+resultados = encontrar_configuraciones_menor_energia(m1, m2, m3, rango_n, num_configuraciones)
+print(resultados)"""
