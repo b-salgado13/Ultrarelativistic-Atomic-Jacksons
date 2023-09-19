@@ -10,12 +10,6 @@ Pendiente:
 
 import numpy as np
 
-# Matrices de Pauli
-pauli_x = np.array([[0, 1], [1, 0]])
-pauli_y = np.array([[0, complex(0, -1)], [complex(0, 1), 0]])
-pauli_z = np.array([[1, 0], [0, -1]])
-
-
 #Generadores de matrices para operadores de momento angular
 
 def MatrizJCuadrada(l):
