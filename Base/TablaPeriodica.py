@@ -8,12 +8,15 @@ Atomo = {
     "H" : {
         1 : {
             "masa" : 1837.152618
+            #Estable, abundancia 99.97%
         },
         2 : {
             "masa" : 3671.481583
+            #Estable, abundancia 0.001
         },
         3 : {
             "masa" : 5497.921086
+            #Inestable, Trazas
         },
         "carga" : 1
     },
@@ -23,9 +26,11 @@ Atomo = {
         },
         3 : {
             "masa" : 5497.884629
+            #Estable, abundancia 0.0002%
         },
         4 : {
             "masa" : 7296.299044
+            #Estable, abundancia 99.9998%
         },
         5 : {
             "masa" : 9136.421148
@@ -38,9 +43,11 @@ Atomo = {
         },
         6 : {
             "masa" : 10964.896818
+            #Estable, abundancia 1.9%-7.8%
         },
         7 : {
             "masa" : 12789.391299
+            #Estable, abundancia 98.1%-92.2%
         },
         8 : {
             "masa" : 14624.097601
@@ -53,15 +60,21 @@ Atomo = {
     "Be" : {
         7 : {
             "masa" : 12791.077471
+            #Inestable, Traza
         },
         8 : {
             "masa" : 14592.778554
         },
         9 : {
             "masa" : 16428.204897
+            #Estable, abundancia 100%
         },
         10 : {
             "masa" : 18253.556136
+            #Inestable, Traza
+        },
+        11 : {
+            "masa" : 20091.259267
         },
         "carga" : 4
     },
@@ -74,9 +87,11 @@ Atomo = {
         },
         10 : {
             "masa" : 18252.466049
+            #Estable, abundancia 18.9%-20.4%
         },
         11 : {
             "masa" : 20068.735657
+            #Estable, abundancia 81.1&-79.6%
         },
         12 : {
             "masa" : 21900.824291
@@ -92,12 +107,15 @@ Atomo = {
         },
         12 : {
             "masa" : 21874.662195
+            #Estable, abundancia 98.84%-99.04%
         },
         13 : {
             "masa" : 23703.66468
+            #Estable, abundancia 1.16%-0.96%
         },
         14 : {
             "masa" : 25526.34721
+            #Inestable, Traza
         },
         15 : {
             "masa" : 27362.64854
