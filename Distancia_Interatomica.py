@@ -2,6 +2,11 @@
 
 N_A = 6.022e23 # Numero de Avogadro
 import math
+import pandas as pd
+
+import Base.Constantes as const
+import Base.TablaPeriodica as elementos
+
 
 #MASAS DE LOS ELEMENTONS EN G/MOL
 Simbolos = [ 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 
@@ -19,9 +24,20 @@ def iniciar(Simbolos, Masas_Atomicas):
   print("--- DISTANCIA INTER ATÓMICA ---\n--- A PARTIR DE FRENCUENCIA DE ABSORCION---")
   print("---------------------------------------")
   Elemento_1 = input("--> Elemento 1: ")
+  E1 = elementos.Atomo[Elemento_1]
+  isotopos_1 = pd.DataFrame(E1).iloc[:, 0:len(E1)-1]*const.electron_uma
+  print("Isótopos disponibles:")
+  print(isotopos_1)
+  I1 = input("-->Isotopo: ")
+  M1 = elementos.Atomo[Elemento_1][int(I1)]['masa']*const.electron_uma
+
   Elemento_2 = input("--> Elemento 2: ")
-  M1 = Masas_Atomicas[Simbolos.index(Elemento_1)]
-  M2 = Masas_Atomicas[Simbolos.index(Elemento_2)]
+  E2 = elementos.Atomo[Elemento_2]
+  isotopos_2 = pd.DataFrame(E2).iloc[:, 0:len(E2)-1]*const.electron_uma
+  print("Isótopos disponibles:")
+  print(isotopos_2)
+  I2 = input("-->Isotopo: ")
+  M2 = elementos.Atomo[Elemento_2][int(I2)]['masa']*const.electron_uma
   print("--> Masa de {:} = {:} g/mol".format(Elemento_1, M1))
   print("--> Masa de {:} = {:} g/mol".format(Elemento_2, M2))
   print("---------------------------------------")
