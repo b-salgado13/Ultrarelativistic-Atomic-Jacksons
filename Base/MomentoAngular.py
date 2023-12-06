@@ -15,7 +15,7 @@ import numpy as np
 
 #Funciones auxiliares
 def ValoresM(j):
-  return [i of i in np.range(-j, j+1, 1)]
+  return [i for i in np.range(-j, j+1, 1)]
 
 def EnteroSemienteroPositivoQ(j):
   return j%(1/2) == 0 and j >= 0
