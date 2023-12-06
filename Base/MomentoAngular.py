@@ -13,6 +13,14 @@ Pendiente:
 
 import numpy as np
 
+#Funciones auxiliares
+def ValoresM(j):
+  return [i of i in np.range(-j, j+1, 1)]
+
+def EnteroSemienteroPositivoQ(j):
+  return j%(1/2) == 0 and j >= 0
+
+
 #Generadores de matrices para operadores de momento angular
 
 def MatrizJCuadrada(l):
@@ -20,7 +28,7 @@ def MatrizJCuadrada(l):
     Generador de la matriz de momento angular L^2 para valor de l.
     """
     #Primero evaluamos que el momento angular sea entero o semientero positivo. 
-    if l%(1/2) !=0 or l<0:
+    if not EnteroSemienteroPositivoQ(l):
         raise ValueError("El momento angular debe ser entero o semientero positivo")
       
     m_total = int(2*l + 1)
@@ -33,10 +41,10 @@ def MatrizJz(l):
     """
   
     #Primero evaluamos que el momento angular sea entero o semientero positivo. 
-    if l%(1/2) !=0 or l<0:
+    if not EnteroSemienteroPositivoQ(l):
         raise ValueError("El momento angular debe ser entero o semientero positivo")
       
-    m_valores = [i for i in np.arange(-l, l+1, 1) ]
+    m_valores = ValoresM(l)
     m_total   = int(2*l + 1)
     Lz        = np.zeros((m_total, m_total))
 
@@ -51,10 +59,10 @@ def MatrizJMasMenos(l, p=True):
     """
     
     #Primero evaluamos que el momento angular sea entero o semientero positivo. 
-    if l%(1/2) !=0 or l<0:
+    if not EnteroSemienteroPositivoQ(l):
         raise ValueError("El momento angular debe ser entero o semientero positivo")
         
-    m_valores = [i for i in np.arange(-l, l+1, 1) ]
+    m_valores = ValoresM(l)
     eigenvalores_mas_menos = np.zeros(len(m_valores))
     
     for j in range(len(m_valores)):
