@@ -15,6 +15,9 @@ import numpy as np
 
 #Funciones auxiliares
 def ValoresM(j):
+  if not EnteroSemienteroPositivoQ(j):
+    raise ValueError("El momento angular debe ser entero o semientero positivo")
+    
   return [i for i in range(-j, j+1, 1)]
 
 def EnteroSemienteroPositivoQ(j):
